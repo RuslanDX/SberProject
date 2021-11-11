@@ -1,0 +1,156 @@
+.mySelect {
+    color: whitesmoke;
+    background-color: #111111;
+    width: 45%;
+    padding: 5px 15px;
+    margin: 5px 0;
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 10px;
+
+    /*  the bare minimum  */
+    font: inherit;
+    letter-spacing: inherit;
+    word-spacing: inherit;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+select:not([multiple]) {
+    /*  mine again  */
+    padding-right: 1.2em;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 0.25em) 0.35em;
+    background-size: 0.85em auto;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Cpath d='M70.3 13.8L40 66.3 9.7 13.8z' fill='%23000'%3E%3C/path%3E%3C/svg%3E");
+}
+
+*[dir="rtl"] select:not([multiple]) {
+    padding-right: 0.2em;
+    padding-left: 1.2em;
+    background-position: 0.25em 0.35em;
+}
+
+/* Filament: Hide arrow icon in IE browsers */
+select::-ms-expand {
+    display: none;
+}
+
+/* Focus */
+
+select:focus {
+    outline: 0.15em solid #c11449;
+    box-shadow: 0 0 0.2em #c11449;
+}
+
+/* Errored */
+
+select[aria-invalid] {
+    background: linear-gradient(
+            135deg,
+            rgba(255, 0, 0, 1) 0,
+            rgba(255, 0, 0, 1) 0.4em,
+            rgba(255, 255, 255, 0) 0.4em
+    );
+}
+
+select[aria-invalid]:not([multiple]) {
+    background-repeat: no-repeat, no-repeat;
+    background-position: 0 0, calc(100% - 0.25em) 0.35em;
+    background-size: 0.85em auto;
+    background-image: linear-gradient(
+            135deg,
+            rgba(255, 0, 0, 1) 0,
+            rgba(255, 0, 0, 1) 0.4em,
+            rgba(255, 255, 255, 0) 0.4em
+    ),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Cpath d='M70.3 13.8L40 66.3 9.7 13.8z' fill='%23000'%3E%3C/path%3E%3C/svg%3E");
+}
+
+/* RTL Errored */
+
+*[dir="rtl"] select[aria-invalid] {
+    background: linear-gradient(
+            225deg,
+            rgba(255, 0, 0, 1) 0,
+            rgba(255, 0, 0, 1) 0.4em,
+            rgba(255, 255, 255, 0) 0.4em
+    );
+}
+
+*[dir="rtl"] select[aria-invalid]:not([multiple]) {
+    background: linear-gradient(
+            225deg,
+            rgba(255, 0, 0, 1) 0,
+            rgba(255, 0, 0, 1) 0.4em,
+            rgba(255, 255, 255, 0) 0.4em
+    ),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Cpath d='M70.3 13.8L40 66.3 9.7 13.8z' fill='%23000'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: auto, 0.85em auto;
+    background-position: 0 0, 0.25em 0.35em;
+}
+
+/* Required */
+
+select[required] {
+    border-left-width: 0.3em;
+}
+
+/* RTL Required */
+
+*[dir="rtl"] select[required] {
+    border-left-width: 0.1em;
+    border-right-width: 0.3em;
+}
+
+/* Dark mode */
+
+@media screen and (prefers-color-scheme: dark) {
+    form {
+        background-color: #000;
+        color: #fff;
+    }
+
+    select {
+        background-color: transparent;
+        color: inherit;
+        border-color: #ccc;
+    }
+
+    select:not([multiple]) option {
+        color: initial;
+    }
+
+    select:focus {
+        outline-color: #ea5455;
+        box-shadow: 0 0 0.2em #ea5455;
+    }
+
+    select:disabled {
+        border-color: rgba(255, 255, 255, 0.3);
+        color: rgba(255, 255, 255, 0.3);
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    select[readonly] {
+        border-color: #777;
+    }
+
+    select[aria-invalid] {
+        background: linear-gradient(
+                135deg,
+                rgba(238, 0, 0, 1) 0,
+                rgba(238, 0, 0, 1) 0.3em,
+                rgba(0, 0, 0, 0) 0.3em
+        );
+    }
+
+    *[dir="rtl"] select[aria-invalid] {
+        background: linear-gradient(
+                225deg,
+                rgba(238, 0, 0, 1) 0,
+                rgba(238, 0, 0, 1) 0.3em,
+                rgba(0, 0, 0, 0) 0.3em
+        );
+    }
+}

@@ -1,0 +1,19 @@
+.myInput {
+    color: whitesmoke;
+    background-color: #111111;
+    width: 100%;
+    padding: 5px 15px;
+    margin: 2px 0;
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 10px;
+    font: inherit;
+    word-spacing: inherit;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    margin-bottom: 8px;
+}
+input:focus {
+    outline: 0.15em solid #c11449;
+    box-shadow: 0 0 0.2em #c11449;
+}
