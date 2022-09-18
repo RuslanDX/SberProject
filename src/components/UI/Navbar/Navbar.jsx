@@ -18,9 +18,9 @@ const Navbar = () => {
                 <Link className='linkText' style={{marginLeft:'20px'}} to="/about" >О сайте</Link>
                 <Link className='linkText' to="/posts">События</Link>
             </div>
-            <MyButton style={{alignSelf: 'flex-end',marginBottom: '3px'}} onClick={logout}>
-                Выйти
-            </MyButton>
+            {/*<MyButton style={{alignSelf: 'flex-end',marginBottom: '3px'}} onClick={logout}>*/}
+            {/*    Выйти*/}
+            {/*</MyButton>*/}
         </div>
     );
 };

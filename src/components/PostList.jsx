@@ -10,16 +10,14 @@ const PostList = ({posts, title, remove}) => {
     if ((!posts.length)&&(isLoading == false)) {
         return (
             <div style={{textAlign: 'center',width:'100%'}}>
-                <h1 className="logo-1">Мероприятия не найдены</h1>
+                <h1 className="logo-1">Автомобили не найдены</h1>
             </div>
         )
     }
 
     return (
         <div>
-            {/*<h1 style={{textAlign: 'center'}}>
-                {title}
-            </h1>*/}
+
             <TransitionGroup>
                 {posts.map((post, index) =>
                     <CSSTransition

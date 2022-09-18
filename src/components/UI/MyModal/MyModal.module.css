@@ -20,11 +20,12 @@
     overflow: hidden;
     background: #2c163e;
     border: 3px solid #c11449;
-    width: 100%;
+    width: 50%;
+    height: 30%;
     min-width: 250px;
     border-radius: 10px;
-    margin-left: 12px;
-    margin-right: 12px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .myModal.active {

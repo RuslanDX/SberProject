@@ -8,9 +8,9 @@ const PostItem = (props) => {
     return (
         <div className="post">
             <div className="post__content">
-                <strong>{props.post.id}. {props.post.title}</strong>
+                <strong>{props.post.model}</strong>
                 <div>
-                    {props.post.body}
+                    {props.post.owner}
                 </div>
             </div>
             <div className="post__btns">
@@ -18,9 +18,9 @@ const PostItem = (props) => {
                 <MyButton style={{marginRight: 4}} onClick={() => router.push(`/posts/${props.post.id}`)}>
                     Открыть
                 </MyButton>
-                <MyButton onClick={() => props.remove(props.post)}>
-                    Удалить
-                </MyButton>
+                {/*<MyButton onClick={() => props.remove(props.post)}>*/}
+                {/*    Удалить*/}
+                {/*</MyButton>*/}
             </div>
         </div>
     );

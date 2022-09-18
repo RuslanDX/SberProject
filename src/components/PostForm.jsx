@@ -4,7 +4,7 @@ import MyButton from "./UI/button/MyButton";
 import "./UI/input/MyInput.module.css"
 
 const PostForm = ({create}) => {
-    const [post, setPost] = useState({title: '', body: '',time:''})
+    const [post, setPost] = useState({model: '', number: '',owner:'', mileage:''})
 
 
     const addNewPost = (e) => {
@@ -13,32 +13,38 @@ const PostForm = ({create}) => {
             ...post, id: Date.now()
         }
         create(newPost)
-        setPost({title: '', body: '',time:''})
+        setPost({model: '', number: '',owner:'', mileage:''})
     }
 
     return (
         <form>
             {/*Управляемый компонент*/}
             <MyInput
-                value={post.title}
-                onChange={e => setPost({...post, title: e.target.value})}
+                value={post.model}
+                onChange={e => setPost({...post, model: e.target.value})}
                 type="text"
-                placeholder="Организатор"
+                placeholder="Модель"
             />
             {/*Неуправляемый\Неконтролируемый компонент*/}
             <MyInput
-                value={post.body}
-                onChange={e => setPost({...post, body: e.target.value})}
+                value={post.number}
+                onChange={e => setPost({...post, number: e.target.value})}
                 type="text"
-                placeholder="Описание события"
+                placeholder="Номер"
             />
             <MyInput
-                value={post.time}
-                onChange={e => setPost({...post, time: e.target.value})}
+                value={post.owner}
+                onChange={e => setPost({...post, owner: e.target.value})}
                 type="text"
-                placeholder="Дата события"
+                placeholder="Владелец"
             />
-            <MyButton style={{marginLeft: 'auto',marginRight: '0'}} onClick={addNewPost}>Создать пост</MyButton>
+            <MyInput
+                value={post.mileage}
+                onChange={e => setPost({...post, mileage: e.target.value})}
+                type="text"
+                placeholder="Пробег"
+            />
+            <MyButton style={{marginLeft: 'auto',marginRight: '0', marginTop: '20px'}} onClick={addNewPost}>Опубликовать</MyButton>
         </form>
     );
 };

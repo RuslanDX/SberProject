@@ -13,7 +13,7 @@
 }
 
 .App {
-    width: 100vw;
+    width: 70vw;
 }
 
 .post {
@@ -195,7 +195,7 @@ hr {
 form {
     display: flex;
     flex-direction: column;
-    padding: 5px;
+    padding: 15px;
     height: 100%;
     width: 100%;
     overflow: hidden;
