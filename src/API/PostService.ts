@@ -11,20 +11,22 @@ export default class PostService {
         return response;
     }
 
-    static async getById(id) {
+    static async getById(id: any) {
         const response = await axios.get('https://jsonplaceholder.typicode.com/posts/' + id)
         return response;
     }
 
-    static async DeletePostByPostId(id) {
+    // @ts-expect-error TS(2393): Duplicate function implementation.
+    static async DeletePostByPostId(id: any) {
         const response = await axios.delete('https://jsonplaceholder.typicode.com/posts/' + id)
         return response;
     }
-    static async UpdatePostByPostId(model_,number_,owner_,mileage_,id) {
+    static async UpdatePostByPostId(model_: any,number_: any,owner_: any,mileage_: any,id: any) {
         const response = await axios.get('https://jsonplaceholder.typicode.com/posts/' + (id+1)) // должен быть update, но пока проверка
         return response;
     }
-    static async DeletePostByPostId(id) {
+    // @ts-expect-error TS(2393): Duplicate function implementation.
+    static async DeletePostByPostId(id: any) {
         const response = await axios.delete('https://jsonplaceholder.typicode.com/posts/' + id)
         return response;
     }

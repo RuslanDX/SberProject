@@ -1,9 +1,9 @@
 //получаем кол-во страниц
-export const getPageCount = (totalCount, limit) => {
+export const getPageCount = (totalCount: any, limit: any) => {
     return Math.ceil(totalCount / limit)
 }
 
-export const getPagesArray = (totalPages) => {
+export const getPagesArray = (totalPages: any) => {
     let result = [];
     for (let i = 0; i < totalPages; i++) {
         result.push(i + 1)
