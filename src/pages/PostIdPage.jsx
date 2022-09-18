@@ -19,7 +19,7 @@ const PostIdPage = () => {
     const history = useHistory();
     const params = useParams()
     const [post, setPost] = useState({});
-    //const [comments, setComments] = useState([]);
+
     const [fetchPostById, isLoading, error] = useFetching(async (id) => {
         const response = await PostService.getById(id)
         setPost(response.data);
@@ -50,10 +50,7 @@ const PostIdPage = () => {
         }
         setDisabled(disabled !== null ? null : "disabled")
     }
-    // const [fetchComments, isComLoading, comError] = useFetching(async (id) => {
-    //     const response = await PostService.getCommentsByPostId(id)
-    //     setComments(response.data);
-    // })
+
     const [model, setModel] = useState("");
     const [number, setNumber] = useState("");
     const [owner, setOwner] = useState("");
@@ -61,7 +58,7 @@ const PostIdPage = () => {
 
     useEffect(() => {
         fetchPostById(params.id);
-        //fetchComments(params.id)
+
     }, [])
 
 
@@ -70,9 +67,7 @@ const PostIdPage = () => {
         <div>
             <h1>Вы открыли страницу поста c ID = {params.id}</h1>
             {
-                // isLoading
-                // ? <Loader/>
-                // :  <div>{post.id}. {post.title}</div>
+
 
                 isLoading
                 ? <Loader/>
@@ -118,20 +113,6 @@ const PostIdPage = () => {
                         </MyModal>
                 </card>
             }
-            {/*<h1>*/}
-            {/*    Комментарии*/}
-            {/*</h1>*/}
-            {/*{isComLoading*/}
-            {/*    ? <Loader/>*/}
-            {/*    : <div>*/}
-            {/*        {comments.map(comm =>*/}
-            {/*            <div key={comm.id} style={{marginTop: 15}}>*/}
-            {/*                <h5>{comm.email}</h5>*/}
-            {/*                <div>{comm.body}</div>*/}
-            {/*            </div>*/}
-            {/*        )}*/}
-            {/*    </div>*/}
-            {/*}*/}
 
             <div style={{marginTop: "10px"}}>
                 <MyButton onClick={_ => ButtonUpdateFunction(model,number,owner,mileage,params.id)}>{disabled !== null ? "Изменить" : "Сохранить"}</MyButton>

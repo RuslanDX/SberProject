@@ -60,15 +60,6 @@ function Posts()
     return (
         <div className="App">
 
-            {/*<div className="ramka">*/}
-            {/*<nav>*/}
-            {/*    <div className="nav_but" onClick={()=>setMenuActive(!menuActive)}>*/}
-            {/*        <span/>*/}
-            {/*    </div>*/}
-            {/*</nav>*/}
-            {/*</div>*/}
-
-            {/*<Menu active={menuActive} setActive={setMenuActive} header = {"Список событий"}/>*/}
             <div>
                 <MyButton style={{marginTop: 10, marginBottom: 10}} onClick={() => setModal(true)}>
                     Создать карточку
@@ -76,7 +67,7 @@ function Posts()
                 <MyModal visible={modal} setVisible={setModal}>
                     <PostForm create={createPost}/>
                 </MyModal>
-                {/*<hr style={{margin: '15px 0'}}/>*/}
+
                 <PostFilter
                     filter={filter}
                     setFilter={setFilter}
@@ -90,7 +81,7 @@ function Posts()
                         {value: 5, name: '5'},
                         {value: 10, name: '10'},
                         {value: 25, name: '25'},
-                        /*{value: -1, name: 'Показать все'},*/
+
                     ]}
                 />
                 {postError &&
