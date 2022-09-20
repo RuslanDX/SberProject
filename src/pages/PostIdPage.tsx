@@ -67,16 +67,16 @@ const PostIdPage : FC = () => {
 
     return (
         <div className={'page_of_car'}>
-            <div>Вы открыли страницу поста c ID = {params.id}</div>
+            <div className={'Id_of_car_text'}>Car ID : {params.id}</div>
             {
                 isLoading
                 ?
                   <Loader/>
                 :
-                   <div className={'infocard_about_car'}>
-                        <div style={{marginTop: "10px"}}>
+                   <div >
+                        <div style={{marginTop: "20px"}}>
                             <div className={'name_of_category'}>
-                            Модель:
+                            Model :
                             </div>
                             <div className={'input_for_category'}>
                             <MyInput type="text" value={model} name={"модель"} disabled={Clickable} onChange={(event: any) => setModel(event.target.value)} />
@@ -84,7 +84,7 @@ const PostIdPage : FC = () => {
                         </div>
                         <div style={{marginTop: "10px"}}>
                             <div className={'name_of_category'}>
-                            Номер:
+                            Number :
                             </div>
                             <div className={'input_for_category'}>
                             <MyInput type="text" value={number} name={"номер"} disabled={Clickable} onChange={(event: any) => setNumber(event.target.value)} />
@@ -93,7 +93,7 @@ const PostIdPage : FC = () => {
 
                         <div style={{marginTop: "10px"}}>
                             <div className={'name_of_category'}>
-                            Владелец:
+                            Owner :
                             </div>
                             <div className={'input_for_category'}>
                             <MyInput type="text" value={owner} name={"владелец"} disabled={Clickable} onChange={(event: any) => setOwner(event.target.value)} />
@@ -102,7 +102,7 @@ const PostIdPage : FC = () => {
 
                         <div style={{marginTop: "10px"}}>
                             <div className={'name_of_category'}>
-                            Пробег:
+                            Mileage :
                             </div>
                             <div className={'input_for_category'}>
                             <MyInput type="text" value={mileage} name={"пробег"} disabled={Clickable} onChange={(event: any) => setMileage(event.target.value)} />
@@ -115,12 +115,12 @@ const PostIdPage : FC = () => {
                 </div>
             }
 
-            <div style={{marginTop: "10px"}}>
-                <MyButton onClick={(_: any) =>
-                    ButtonUpdateFunction(model,number,owner,mileage,params.id)}>{Clickable !== null ? "Изменить" : "Сохранить"}
+            <div style={{marginTop: "20px", textAlign: "right"}}>
+                <MyButton style={{marginRight: "10px"}} onClick={(_: any) =>
+                    ButtonUpdateFunction(model,number,owner,mileage,params.id)}>{Clickable !== null ? "Change" : "Save"}
                 </MyButton>
             <MyButton onClick={() => DeletePost(params.id)}>
-                Удалить
+                Delete
             </MyButton>
 
             </div>

@@ -118,6 +118,16 @@ nav{
     font-weight: bold;
     text-decoration: none;
 }
+.Id_of_car_text
+{
+    font-size: 20pt;
+    background: linear-gradient(1deg, #c64dbe 0%, #55b4dd);
+    /*background: #55b4dd;*/
+    -webkit-text-stroke: .01em #2d4d61;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
 
 ::-webkit-scrollbar-track
 {
@@ -222,29 +232,24 @@ h1 {
     text-align: center;
 }
 .name_of_category {
-    marginLeft: 0px;
-    marginRight: 50px;
+
     display: inline-block;
-    paddingRight: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 12pt;
+
 }
 .input_for_category {
-    marginLeft: auto;
-    marginRight: 0px;
-    display:inline-block;
 }
 .page_of_car {
-    margin-top: 7%;
-    /*marginLeft: auto;*/
-    /*marginRight: auto;*/
-    text-align: center;
-    position: relative;
-    /*top: 50%;*/
-}
-.infocard_about_car
-{
-
+    width: 60%;
+    position: fixed; /* or absolute */
+    top: 15%;
+    left: 20%;
+    /*text-align: center;*/
 
 }
+
 
 .logo-1 {
     color: white;
