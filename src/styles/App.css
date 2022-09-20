@@ -9,22 +9,23 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
 }
 
 .App {
     width: 70vw;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .post {
     /*display: flex;*/
     padding: 5px;
-    border: 3px solid black;
+    border: 2px solid #2d4d61;
     border-radius: 10px;
     margin-top: 10px;
     justify-content: space-between;
     align-items: flex-start;
-    margin-: 10px;
+    margin-bottom: 10px;
     /*background: url(background_for_post.jpg) no-repeat;*/
     background-size: cover;
     backdrop-filter: blur(10px);
@@ -57,17 +58,17 @@
 /*Стили для кнопок страниц*/
 .page {
     padding: 10px;
-    border: 1px solid teal;
+    border: 1px solid #55b4dd;
     cursor: pointer;
 }
 
 .page__current {
-    border: 2px solid orange;
+    border: 2px #c64dbe;
     font-weight: bold;
 }
 
 .navbar {
-    height: 50px;
+    height: 60px;
     width: 100vw;
     display: flex;
     align-items: center;
@@ -78,21 +79,23 @@
     border-left: none;
     border-right: none;
     border-top: none;
-    backdrop-filter: blur(5px);
-    border-bottom: 7px solid;
+    backdrop-filter: blur(6px);
+    border-bottom: 6px solid;
     /*padding: 15px;*/
     border-image: linear-gradient(to right,
-    #e81540 0px, /* Starting point */
-    #f17d37 calc(80px), /* End black point */
-    #f8a71a calc(50%), /* Starting red point */
+    #c64dbe 0px, /* Starting point */
+    /*#2d4d61 calc(80px), !* End black point *!*/
+    #55b4dd calc(50%), /* Starting red point */
     /*#ff0000 calc(50% + 250px), !* End red point *!
     #000000 calc(50% + 250px), !* Starting black point *!*/
-    #e81540 100% /* End black point */) 47% 0%;
+    #c64dbe 100% /* End black point */) 47% 0%;
 }
 
 .navbar__links {
-    alignSelf:flex-start;
+    align-self:flex-start;
     width: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 nav{
     height: 70px;
@@ -102,15 +105,18 @@ nav{
     display: flex;
     align-items: center;
     z-index: 50;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(10px);
 }
 .linkText
 {
     margin-left: 50px;
-    background: linear-gradient(45deg, #ea5455 0%, #f8a71a);
+    background: linear-gradient(45deg, #c64dbe 0%, #55b4dd);
+    /*background: #55b4dd;*/
+    /*-webkit-text-stroke: .01em #2d4d61;*/
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: bold;
+    text-decoration: none;
 }
 
 ::-webkit-scrollbar-track
@@ -167,25 +173,25 @@ nav{
 .nav_but:hover div {
     transform: scale(0);
 }
-.ramka {
-    position: fixed;
-    display: flex;
-    top:45px;
-    /*align-items: center;*/
-    width: 80px; /* ширина */
-    height: 80px; /* высота */
-    /*margin: 50px auto;*/ /* верхний и нижний отступы и горизонтальное выравнивание */
-    background: transparent; /* цвет фона */
-    backdrop-filter: blur(5px);
-    border: 7px solid transparent; /* задаем сплошную прозрачную границу шириной в 20 пикселей */
-    z-index: 50;
-    /* наша собственная диагональная граница, где мы указали что цвет начинает меняться от левого верхнего (top left) угла */
-    -moz-border-image: -moz-linear-gradient(top left, #ea5455 0%, #f8a71a 100%);
-    -webkit-border-image: -webkit-linear-gradient(top left, #ea5455 0%, #f8a71a 100%);
-    border-image: linear-gradient(to bottom right, #ea5455 0%, #f8a71a 100%);
+/*.ramka {*/
+/*    position: fixed;*/
+/*    display: flex;*/
+/*    top:45px;*/
+/*    !*align-items: center;*!*/
+/*    width: 80px; !* ширина *!*/
+/*    height: 80px; !* высота *!*/
+/*    !*margin: 50px auto;*! !* верхний и нижний отступы и горизонтальное выравнивание *!*/
+/*    background: transparent; !* цвет фона *!*/
+/*    backdrop-filter: blur(5px);*/
+/*    border: 7px solid transparent; !* задаем сплошную прозрачную границу шириной в 20 пикселей *!*/
+/*    z-index: 50;*/
+/*    !* наша собственная диагональная граница, где мы указали что цвет начинает меняться от левого верхнего (top left) угла *!*/
+/*    -moz-border-image: -moz-linear-gradient(top left, #ea5455 0%, #f8a71a 100%);*/
+/*    -webkit-border-image: -webkit-linear-gradient(top left, #ea5455 0%, #f8a71a 100%);*/
+/*    border-image: linear-gradient(to bottom right, #ea5455 0%, #f8a71a 100%);*/
 
-    border-image-slice: 1; /* смещение фона границы */
-}
+/*    border-image-slice: 1; !* смещение фона границы *!*/
+/*}*/
 hr {
     border : 0;
     height: 2px;
@@ -214,6 +220,30 @@ h1 {
     display: block;
     height: auto;
     text-align: center;
+}
+.name_of_category {
+    marginLeft: 0px;
+    marginRight: 50px;
+    display: inline-block;
+    paddingRight: 10px;
+}
+.input_for_category {
+    marginLeft: auto;
+    marginRight: 0px;
+    display:inline-block;
+}
+.page_of_car {
+    margin-top: 7%;
+    /*marginLeft: auto;*/
+    /*marginRight: auto;*/
+    text-align: center;
+    position: relative;
+    /*top: 50%;*/
+}
+.infocard_about_car
+{
+
+
 }
 
 .logo-1 {

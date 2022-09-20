@@ -16,7 +16,7 @@ const PostItem = (props: any) => {
             <div className="post__btns">
                 {/*Динамический адрес для перехода между постами*/}
                 <MyButton style={{marginRight: 4}} onClick={() => router.push(`/posts/${props.post.id}`)}>
-                    Открыть
+                    Open
                 </MyButton>
                 {/*<MyButton onClick={() => props.remove(props.post)}>*/}
                 {/*    Удалить*/}

@@ -42,20 +42,20 @@ p:nth-child(7) {
     0% {
         transform: scale(.5);
         color: #121212;
-        -webkit-text-stroke: 2px gray;
+        -webkit-text-stroke: 1px lightgray;
     }
 
     20% {
         transform: scale(1);
-        color: #c11449;
-        -webkit-text-stroke: 3px #ea5455;
-        filter: drop-shadow(0 0 1px black)drop-shadow(0 0 1px black)drop-shadow(0 0 3px #ea5455)drop-shadow(0 0 5px #ea5455)hue-rotate(10turn);
+        color: #482ff7;
+        -webkit-text-stroke: 3px #c64dbe;
+        filter: drop-shadow(0 0 1px black)drop-shadow(0 0 1px black)drop-shadow(0 0 3px #55b4dd)drop-shadow(0 0 5px #55b4dd)hue-rotate(10turn);
     }
 
     50% {
         transform: scale(.5);
         color: #121212;
-        -webkit-text-stroke: 2px gray;
+        -webkit-text-stroke: 1px lightgray;
     }
 
 

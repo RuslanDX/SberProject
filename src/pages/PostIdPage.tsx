@@ -66,56 +66,53 @@ const PostIdPage : FC = () => {
 
 
     return (
-        <div>
-            <h1>Вы открыли страницу поста c ID = {params.id}</h1>
+        <div className={'page_of_car'}>
+            <div>Вы открыли страницу поста c ID = {params.id}</div>
             {
-
-
                 isLoading
                 ?
                   <Loader/>
                 :
-                   <>
-
-                        <div style={{marginTop: "10px", }}>
-                            <div style={{marginLeft: "5px",marginRight: "auto", display:"inline-block", paddingRight:"10px"}}>
+                   <div className={'infocard_about_car'}>
+                        <div style={{marginTop: "10px"}}>
+                            <div className={'name_of_category'}>
                             Модель:
                             </div>
-                            <div style={{marginLeft: "auto",marginRight: "5px", display:"inline-block"}}>
+                            <div className={'input_for_category'}>
                             <MyInput type="text" value={model} name={"модель"} disabled={Clickable} onChange={(event: any) => setModel(event.target.value)} />
                             </div>
                         </div>
-                        <div style={{marginTop: "10px", }}>
-                            <div style={{marginLeft: "5px",marginRight: "auto", display:"inline-block", paddingRight:"10px"}}>
+                        <div style={{marginTop: "10px"}}>
+                            <div className={'name_of_category'}>
                             Номер:
                             </div>
-                            <div style={{marginLeft: "auto",marginRight: "5px", display:"inline-block"}}>
+                            <div className={'input_for_category'}>
                             <MyInput type="text" value={number} name={"номер"} disabled={Clickable} onChange={(event: any) => setNumber(event.target.value)} />
                             </div>
                         </div>
 
-                        <div style={{marginTop: "10px", }}>
-                            <div style={{marginLeft: "5px",marginRight: "auto", display:"inline-block", paddingRight:"10px"}}>
+                        <div style={{marginTop: "10px"}}>
+                            <div className={'name_of_category'}>
                             Владелец:
                             </div>
-                            <div style={{marginLeft: "auto",marginRight: "5px", display:"inline-block"}}>
+                            <div className={'input_for_category'}>
                             <MyInput type="text" value={owner} name={"владелец"} disabled={Clickable} onChange={(event: any) => setOwner(event.target.value)} />
                             </div>
                         </div>
 
                         <div style={{marginTop: "10px"}}>
-                            <div style={{marginLeft: "5px",marginRight: "auto", display:"inline-block", paddingRight:"10px"}}>
+                            <div className={'name_of_category'}>
                             Пробег:
                             </div>
-                            <div style={{marginLeft: "auto",marginRight: "5px", display:"inline-block"}}>
-                            <MyInput type="text" style={{marginLeft: "auto",marginRight: "5px"}} value={mileage} name={"пробег"} disabled={Clickable} onChange={(event: any) => setMileage(event.target.value)} />
+                            <div className={'input_for_category'}>
+                            <MyInput type="text" value={mileage} name={"пробег"} disabled={Clickable} onChange={(event: any) => setMileage(event.target.value)} />
                             </div>
                         </div>
 
                         <MyModal visible={modal} setVisible={setModal}>
                             <div>{error}</div>
                         </MyModal>
-                </>
+                </div>
             }
 
             <div style={{marginTop: "10px"}}>

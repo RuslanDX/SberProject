@@ -45,8 +45,8 @@ select::-ms-expand {
 /* Focus */
 
 select:focus {
-    outline: 0.15em solid #c11449;
-    box-shadow: 0 0 0.2em #c11449;
+    outline: 0.15em solid #c64dbe;
+    box-shadow: 0 0 0.2em #c64dbe;
 
 }
 
@@ -55,8 +55,8 @@ select:focus {
 select[aria-invalid] {
     background: linear-gradient(
             135deg,
-            rgba(255, 0, 0, 1) 0,
-            rgba(255, 0, 0, 1) 0.4em,
+            #c64dbe 0,
+            #c64dbe 0.4em,
             rgba(255, 255, 255, 0) 0.4em
     );
 
@@ -68,8 +68,8 @@ select[aria-invalid]:not([multiple]) {
     background-size: 0.85em auto;
     background-image: linear-gradient(
             135deg,
-            rgba(255, 0, 0, 1) 0,
-            rgba(255, 0, 0, 1) 0.4em,
+            #c64dbe 0,
+            #c64dbe 0.4em,
             rgba(255, 255, 255, 0) 0.4em
     ),
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Cpath d='M70.3 13.8L40 66.3 9.7 13.8z' fill='%23000'%3E%3C/path%3E%3C/svg%3E");
@@ -81,8 +81,8 @@ select[aria-invalid]:not([multiple]) {
 *[dir="rtl"] select[aria-invalid] {
     background: linear-gradient(
             225deg,
-            rgba(255, 0, 0, 1) 0,
-            rgba(255, 0, 0, 1) 0.4em,
+            #c64dbe 0,
+            #c64dbe 0.4em,
             rgba(255, 255, 255, 0) 0.4em
     );
 
@@ -91,9 +91,9 @@ select[aria-invalid]:not([multiple]) {
 *[dir="rtl"] select[aria-invalid]:not([multiple]) {
     background: linear-gradient(
             225deg,
-            rgba(255, 0, 0, 1) 0,
-            rgba(255, 0, 0, 1) 0.4em,
-            rgba(255, 255, 255, 0) 0.4em
+            #c64dbe 0,
+            #c64dbe 0.4em,
+            #c64dbe 0.4em
     ),
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Cpath d='M70.3 13.8L40 66.3 9.7 13.8z' fill='%23000'%3E%3C/path%3E%3C/svg%3E");
     background-repeat: no-repeat;
@@ -128,17 +128,17 @@ select[required] {
     }
 
     select:not([multiple]) option {
-        color: white;
+        color: lightgray;
     }
 
     select:focus {
-        outline-color: #ea5455;
-        box-shadow: 0 0 0.2em #ea5455;
+        outline-color: #c64dbe;
+        box-shadow: 0 0 0.2em #c64dbe;
     }
 
     select:disabled {
-        border-color: rgba(255, 255, 255, 0.3);
-        color: rgba(255, 255, 255, 0.3);
+        border-color: lightgray;
+        color: lightgray;
 
 
         background-color: rgba(255, 255, 255, 0.1);
@@ -146,15 +146,15 @@ select[required] {
     }
 
     select[readonly] {
-        border-color: #777;
+        border-color: lightgray;
 
     }
 
     select[aria-invalid] {
         background: linear-gradient(
                 135deg,
-                rgba(238, 0, 0, 1) 0,
-                rgba(238, 0, 0, 1) 0.3em,
+                #c64dbe 0,
+                #c64dbe 0.3em,
                 rgba(0, 0, 0, 0) 0.3em
         );
 
@@ -163,8 +163,8 @@ select[required] {
     *[dir="rtl"] select[aria-invalid] {
         background: linear-gradient(
                 225deg,
-                rgba(238, 0, 0, 1) 0,
-                rgba(238, 0, 0, 1) 0.3em,
+                #c64dbe 0,
+                #c64dbe 0.3em,
                 rgba(0, 0, 0, 0) 0.3em
         );
 

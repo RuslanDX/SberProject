@@ -12,8 +12,9 @@
     -webkit-appearance: none;
     appearance: none;
     margin-bottom: 8px;
+
 }
 input:focus {
-    outline: 0.15em solid #c11449;
-    box-shadow: 0 0 0.2em #c11449;
+    outline: 0.15em solid #c64dbe;
+    box-shadow: 0 0 0.2em #c64dbe;
 }

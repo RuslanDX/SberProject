@@ -16,7 +16,7 @@ const PostList = ({
     if ((!posts.length)&&(isLoading == false)) {
         return (
             <div style={{textAlign: 'center',width:'100%'}}>
-                <h1 className="logo-1">Автомобили не найдены</h1>
+                <h1 className="logo-1">No cars</h1>
             </div>
         )
     }

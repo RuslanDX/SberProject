@@ -1,11 +1,11 @@
 
 .myBtn {
-    width: 180px;
+    width: 130px;
     font-size: 20px;
-    height: 35px;
+    height: 40px;
     border: none;
     outline: none;
-    color: #fff;
+    color: lightgray;
     background: #111;
     cursor: pointer;
     position: relative;

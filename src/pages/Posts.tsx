@@ -25,7 +25,7 @@ const Posts: FC = () =>
     const [limit, setLimit] = useState(10);
     const [page, setPage] = useState(1);
     const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query);
-    const lastElement = useRef()
+    const lastElement = useRef() as React.MutableRefObject<HTMLInputElement>;
     //const [menuActive, setMenuActive] = useState(false)
 
 
@@ -70,7 +70,7 @@ const Posts: FC = () =>
 
             <div>
                 <MyButton style={{marginTop: 10, marginBottom: 10}} onClick={() => setModal(true)}>
-                    Create card
+                    Create
                 </MyButton>
                 <MyModal visible={modal} setVisible={setModal}>
                     <PostForm create={createPost}/>
@@ -84,7 +84,7 @@ const Posts: FC = () =>
                 <MySelect
                     value={limit}
                     onChange={(value: any) => setLimit(value)}
-                    defaultValue="Кол-во подгружаемых элементов"
+                    defaultValue="Number of elements to load"
                     options={[
                         {value: 5, name: '5'},
                         {value: 10, name: '10'},
@@ -93,11 +93,9 @@ const Posts: FC = () =>
                     ]}
                 />
                 {ReturnOfFetching[2] &&
-                    // @ts-expect-error TS(7026): JSX element implicitly has type 'any' because no i... Remove this comment to see the full error message
-                    <h1>Произошла ошибка ${postError}</h1>
+                    <h1>Произошла ошибка ${ReturnOfFetching[2]}</h1>
                 }
-                <PostList remove={removePost} posts={sortedAndSearchedPosts} title="Список автомобилей"/>
-                {/* @ts-expect-error TS(7026): JSX element implicitly has type 'any' because no i... Remove this comment to see the full error message */}
+                <PostList remove={removePost} posts={sortedAndSearchedPosts} title="List"/>
                 <div ref={lastElement} style={{height: 20}}/> {/*Отслеживание загрузки новых постов*/}
                 {ReturnOfFetching[1] &&
                     <div style={{display: 'flex', justifyContent: 'center', marginTop: 50}}><Loader/></div>

@@ -46,7 +46,7 @@ const PostForm = ({
                 type="text"
                 placeholder="Пробег"
             />
-            <MyButton style={{marginLeft: 'auto',marginRight: '0', marginTop: '20px'}} onClick={addNewPost}>Опубликовать</MyButton>
+            <MyButton style={{marginLeft: 'auto',marginRight: '0', marginTop: '20px'}} onClick={addNewPost}>Publish</MyButton>
         </form>
     );
 };

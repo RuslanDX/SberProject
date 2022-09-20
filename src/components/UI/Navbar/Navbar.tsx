@@ -13,9 +13,9 @@ const Navbar = () => {
     return (
         <div className="navbar">
 
-            <div className="navbar__links">
-                <Link className='linkText' style={{marginLeft:'20px'}} to="/about" >О сайте</Link>
-                <Link className='linkText' to="/posts">События</Link>
+            <div className="navbar__links" style={{fontSize: '18pt'}}>
+                <Link className='linkText' style={{marginLeft:'20px'}} to="/about" >Info</Link>
+                <Link className='linkText' to="/posts">List</Link>
             </div>
 
         </div>
