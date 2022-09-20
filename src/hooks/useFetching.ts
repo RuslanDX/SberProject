@@ -1,11 +1,19 @@
-// @ts-expect-error TS(7016): Could not find a declaration file for module 'reac... Remove this comment to see the full error message
 import {useState} from "react";
 
-export const useFetching = (callback: any) => {
+// export interface ReturnOfFetching
+// {
+//     fetching_(...args: any[]): void;
+//     isLoading_: boolean;
+//     error_: string
+// };
+
+export function useFetching(callback: any): [Function, boolean, string]
+{
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState('');
 
-    const fetching = async (...args: any[]) => {
+    async function fetching(...args: any[]): Promise<void>
+    {
         try {
             setIsLoading(true)
             await callback(...args)

@@ -16,7 +16,6 @@ export default class PostService {
         return response;
     }
 
-    // @ts-expect-error TS(2393): Duplicate function implementation.
     static async DeletePostByPostId(id: any) {
         const response = await axios.delete('https://jsonplaceholder.typicode.com/posts/' + id)
         return response;
@@ -25,9 +24,5 @@ export default class PostService {
         const response = await axios.get('https://jsonplaceholder.typicode.com/posts/' + (id+1)) // должен быть update, но пока проверка
         return response;
     }
-    // @ts-expect-error TS(2393): Duplicate function implementation.
-    static async DeletePostByPostId(id: any) {
-        const response = await axios.delete('https://jsonplaceholder.typicode.com/posts/' + id)
-        return response;
-    }
+
 }

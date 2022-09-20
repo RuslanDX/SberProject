@@ -1,15 +1,17 @@
-// @ts-expect-error TS(7016): Could not find a declaration file for module 'reac... Remove this comment to see the full error message
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, FC} from 'react';
 import './styles/App.css';
-// @ts-expect-error TS(7016): Could not find a declaration file for module 'reac... Remove this comment to see the full error message
-import {BrowserRouter} from "react-router-dom";
-// @ts-expect-error TS(6142): Module './components/UI/Navbar/Navbar' was resolve... Remove this comment to see the full error message
+import {BrowserRouter,Route, NavLink} from "react-router-dom";
 import Navbar from "./components/UI/Navbar/Navbar";
-// @ts-expect-error TS(6142): Module './components/AppRouter' was resolved to 'C... Remove this comment to see the full error message
 import AppRouter from "./components/AppRouter";
 import {AuthContext} from "./context";
+import Posts from "./pages/Posts";
+import PostIdPage from "./pages/PostIdPage";
+import Error from "./pages/Error";
+import About from "./pages/About";
 
-function App() {
+
+
+const App = () => {
     const [isAuth, setIsAuth] = useState(false);
     const [isLoading, setLoading] = useState(true);
 
@@ -23,21 +25,43 @@ function App() {
 
     return (
         /*AuthContext искать в content/index.js*/
-        // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
+
         <AuthContext.Provider value={{
             isAuth,
             setIsAuth,
-            isLoading
-        }}>
-            {/* @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
+            isLoading}}>
+
             <BrowserRouter>
-                {/* @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
-                <Navbar/>
-                {/* @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
-                <AppRouter/>
+                <div>
+                    <Navbar />
+                    <AppRouter/>
+                </div>
             </BrowserRouter>
+            {/*<BrowserRouter>*/}
+            {/*    <div>*/}
+            {/*        <div>*/}
+            {/*            /!*<NavLink to="/about">О сайте</NavLink>*!/*/}
+            {/*            /!*<NavLink to='/posts'>Список</NavLink>*!/*/}
+            {/*            <Navbar />*/}
+            {/*        </div>*/}
+            {/*        <Route path={'/about'} exact>*/}
+            {/*            <About/>*/}
+            {/*        </Route>*/}
+            {/*        <Route path={'/posts'} exact>*/}
+            {/*            <Posts/>*/}
+            {/*        </Route>*/}
+            {/*        <Route path={'/posts/:id'}>*/}
+            {/*            <PostIdPage/>*/}
+            {/*        </Route>*/}
+            {/*        <Route path={'/error'}>*/}
+            {/*            <Error/>*/}
+            {/*        </Route>*/}
+            {/*    </div>*/}
+            {/*</BrowserRouter>*/}
+
         </AuthContext.Provider>
-    )
+
+    );
 }
 
 export default App;
