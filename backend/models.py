@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, Date
 from sqlalchemy.orm import sessionmaker
-from database import Base, engine
+from backend.database import Base, engine
 
 
 class Car(Base):
@@ -16,4 +16,3 @@ class Car(Base):
 
 Base.metadata.create_all(bind=engine)
 SessionLocal = sessionmaker(autoflush=False, bind=engine)
-db = SessionLocal()

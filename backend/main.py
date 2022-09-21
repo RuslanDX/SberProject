@@ -1,7 +1,9 @@
+from fastapi_pagination import Page, Params, LimitOffsetPage, add_pagination
+from fastapi_pagination.ext.sqlalchemy import paginate
 from pydantic import BaseModel
-from fastapi import FastAPI, status, HTTPException
-from database import SessionLocal
-import models
+from fastapi import FastAPI, status, HTTPException, Depends
+from backend.database import SessionLocal
+import backend.models as models
 
 
 class Car(BaseModel):  # serializer
@@ -15,6 +17,7 @@ class Car(BaseModel):  # serializer
 
 
 app = FastAPI()
+
 db = SessionLocal()
 
 
@@ -24,9 +27,16 @@ def getById(id: str):
     return car
 
 
-@app.get('/car', response_model=Car, status_code=status.HTTP_200_OK)
-def getAll(page: int):
-    pass
+@app.get("/car", response_model=Page[Car])
+@app.get("/car/limit-offset", response_model=LimitOffsetPage[Car])
+def get_car_paginated():
+    return paginate(db.query(Car).all())
+# @app.get('/car', response_model=Page[Car])
+# def get_users(db: SessionLocal = Depends(get_db)):
+#     return paginate(db.query(Car).all)
+
+
+add_pagination(app)
 
 
 @app.post('/car', response_model=Car)
@@ -45,9 +55,9 @@ def CreatePost(car: Car):
         db_item.AutoModel = car.AutoModel
         db_item.AutoOwner = car.AutoOwner
         db_item.AutoMileage = car.AutoMileage
+        db.refresh(db_item)
 
     db.commit()
-    db.refresh(db_item)
 
     return new_car
 
