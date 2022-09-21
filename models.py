@@ -8,9 +8,13 @@ class Car(Base):
     SerialNumber = Column(String, primary_key=True)
     AutoModel = Column(String)
     AutoOwner = Column(String)
-    AutoMileage = Column(String)
+    AutoMileage = Column(Integer)
 
 
 Base.metadata.create_all(bind=engine)
 SessionLocal = sessionmaker(autoflush=False, bind=engine)
 db = SessionLocal()
+
+
+def query(Car):
+    return None
