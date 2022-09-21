@@ -11,6 +11,9 @@ class Car(BaseModel):  # serializer
     AutoOwner: str
     AutoMileage: int
 
+    class Config:
+        orm_mode = True
+
 
 app = FastAPI()
 db = SessionLocal()
@@ -51,8 +54,8 @@ def CreatePost(car: Car):
 
 
 @app.put('/car', response_model=Car, status_code=status.HTTP_200_OK)
-def UpdatePostByPostId(_SerialNumber: str, car: Car):
-    car_to_update = db.query(models.Car).filter(models.Car.SerialNumber == _SerialNumber).first()
+def UpdatePostByPostId(id: str, car: Car):
+    car_to_update = db.query(models.Car).filter(models.Car.SerialNumber == id).first()
     car_to_update.AutoModel = car.AutoModel
     car_to_update.AutoOwner = car.AutoOwner
     car_to_update.AutoMileage = car.AutoMileage
