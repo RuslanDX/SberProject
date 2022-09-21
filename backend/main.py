@@ -1,6 +1,5 @@
 from pydantic import BaseModel
 from fastapi import FastAPI, status, HTTPException
-from fastapi.responses import JSONResponse, FileResponse
 from database import SessionLocal
 import models
 
@@ -66,8 +65,8 @@ def UpdatePostByPostId(id: str, car: Car):
 
 
 @app.delete('/car/{id}')
-def DeletePostByPostId(id: int):
-    car_to_delete = db.query(models.Car).filter(models.Car.id == id).first()
+def DeletePostByPostId(id: str):
+    car_to_delete = db.query(models.Car).filter(models.Car.SerialNumber == id).first()
     if car_to_delete is None:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Resource Not Found")
 
